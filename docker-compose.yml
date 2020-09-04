@@ -1,0 +1,7 @@
+version: '3.4'
+
+services:
+  tendermint:
+    container_name: tendermint
+    build:
+      context: .
