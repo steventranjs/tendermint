@@ -5,3 +5,8 @@ services:
     container_name: tendermint
     build:
       context: .
+    ports: 
+      - 26657:26657
+      - 46656:46656
+    volumes: 
+      - ./storage:/home/tendermint/.tendermint
