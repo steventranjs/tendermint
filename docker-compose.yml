@@ -5,6 +5,7 @@ services:
     container_name: tendermint
     build:
       context: .
+    command: --proxy_app=persistent_kvstore
     ports: 
       - 26657:26657
       - 46656:46656
