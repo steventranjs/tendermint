@@ -1,13 +1,19 @@
 version: '3.4'
 
 services:
+  # init:
+  #   image: tendermint/tendermint:v0.32.12
+  #   command: init
+  #   volumes: 
+  #     - ./storage:/tendermint
+  
   tendermint:
     container_name: tendermint
     build:
       context: .
-    command: --proxy_app=persistent_kvstore
+    command: node --proxy_app=persistent_kvstore
     ports: 
       - 26657:26657
       - 46656:46656
     volumes: 
-      - ./storage:/home/tendermint/.tendermint
+      - ./storage:/tendermint
